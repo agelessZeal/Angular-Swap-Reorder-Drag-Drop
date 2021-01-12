@@ -1,0 +1,48 @@
+.swap-drag-and-drop-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 520px;
+  padding-bottom: 10px;
+  align-items: center;
+  background-color: #888888;
+  .swap-drop-list {
+    margin-left: 10px;
+    margin-top: 10px;
+    cursor: move;
+    height: 55px;
+    background-color: #1976d2;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    &-item1 {
+      width: 245px;
+    }
+    &-item2 {
+      width: 500px;
+    }
+    //transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    .swap-drag-container {
+      height: 100%;
+    }
+  }
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: green;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity:.2;
+  border-radius: 10px;
+  background-color: chocolate;
+}
+/* Animate items as they're being sorted. */
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+

@@ -1,0 +1,7 @@
+<app-swap-drag  class="swap-shower-container" #listComponent [items]="items" [columnNumber]="2">
+  <div class="swap-shower-item-wrapper" *swapDragAndDropListData="let listItem; let i=index">
+    <div class="swap-shower-item"><span>{{listItem.title}}</span></div>
+  </div>
+</app-swap-drag>
+
+

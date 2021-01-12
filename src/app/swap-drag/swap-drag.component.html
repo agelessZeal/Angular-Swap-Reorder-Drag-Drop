@@ -1,0 +1,13 @@
+<p>swap-drag works!</p>
+<div cdkDropListGroup class="swap-drag-and-drop-grid" cdk>
+  <div cdkDropList #placeholder [cdkDropListEnterPredicate]="enter" (cdkDropListDropped)="drop()" [cdkDropListSortingDisabled]="false"
+       [ngStyle]="{'max-width': 100/columnNumber + '%'}">
+  </div>
+  <div cdkDropList [cdkDropListSortingDisabled]="false" *ngFor="let item of items"
+       [ngClass]=" item.width==1? ' swap-drop-list swap-drop-list-item1': 'swap-drop-list swap-drop-list-item2'"
+       [cdkDropListEnterPredicate]="enter" (cdkDropListDropped)="drop()">
+    <div cdkDrag (cdkDragMoved)="dragMoved($event)" class="swap-drag-container">
+      <ng-container swapContentOutlet></ng-container>
+    </div>
+  </div>
+</div>
